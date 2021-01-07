@@ -20,7 +20,6 @@ class Ui_MainWindow(object):
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton.setGeometry(QtCore.QRect(630, 130, 431, 161))
         self.pushButton.setCheckable(False)
-<<<<<<< HEAD
         self.pushButton.setObjectName("button_play")
         self.pushButton_2 = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_2.setGeometry(QtCore.QRect(630, 320, 431, 161))
@@ -34,7 +33,6 @@ class Ui_MainWindow(object):
         self.label_2 = QtWidgets.QLabel(self.centralwidget)
         self.label_2.setGeometry(QtCore.QRect(20, 70, 301, 51))
         self.label_2.setObjectName("label_rez")
-=======
         self.pushButton.setObjectName("pushButton")
         self.pushButton_2 = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_2.setGeometry(QtCore.QRect(630, 320, 431, 161))
@@ -48,7 +46,6 @@ class Ui_MainWindow(object):
         self.label_2 = QtWidgets.QLabel(self.centralwidget)
         self.label_2.setGeometry(QtCore.QRect(20, 70, 301, 51))
         self.label_2.setObjectName("label_2")
->>>>>>> ea7d87f8c2045854105c82b257a9a8f4977702d8
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 1075, 21))
