@@ -1,14 +1,20 @@
 <component name="InspectionProjectProfileManager">
   <profile version="1.0">
     <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPep8NamingInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="N802" />
+          <option value="N806" />
+        </list>
+      </option>
+    </inspection_tool>
     <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="ignoredIdentifiers">
         <list>
-          <option value="QFont" />
-          <option value="PyQt5.QtWidgets.clicked.connect" />
-          <option value="PyQt5.QtWidgets.itemClicked.connect" />
-          <option value="random.random.sample" />
-          <option value="now.day" />
+          <option value="PIP2.self" />
+          <option value="list.join" />
+          <option value="PyQt5.uic" />
         </list>
       </option>
     </inspection_tool>
