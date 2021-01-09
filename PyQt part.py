@@ -1,6 +1,8 @@
 import sys
 import sqlite3
-from PyQt5.QtGui import QFont, QPixmap
+
+from PyQt5.QtCore import QSize
+from PyQt5.QtGui import QFont, QPixmap, QIcon
 from PyQt5 import uic
 from PyQt5.QtWidgets import *
 
@@ -10,9 +12,30 @@ from megagamedesign import Ui_MainWindow
 class GameStartWidget(QMainWindow):
     def __init__(self):
         super().__init__()
+        self.font = QFont()
         uic.loadUi('untitled.ui', self)
+        self.setStyleSheet('QWidget { background-color: rgb(30, 31, 38);}'
+                           'QPushButton { background-color: rgb(30, 31, 38); color: rgb(255, 255, 255);}'
+                           'QLabel { color: rgb(255, 255, 255);}'
+                           'QWidget {font-family: "comfortaa";}'
+                           'QPushButton { font-family: "comfortaa";}'
+                           )
+        self.font.setPointSize(13)
+        self.font.setBold(True)
+        self.button_exit.setText('Выйти')
         self.button_exit.clicked.connect(self.close_window)
+        self.button_exit.setFont(self.font)
+
         self.button_rez.clicked.connect(self.open_result)
+
+        self.button_play.setIcon(QIcon('data/Play_Button.png'))
+        self.button_play.setText('')
+        self.button_play.setIconSize(QSize(431, 161))
+
+        self.button_rez.setIcon(QIcon('data/Results_Button.png'))
+        self.button_rez.setIconSize(QSize(431, 161))
+        self.button_rez.setText('')
+
 
     def close_window(self):
         self.close()
@@ -41,10 +64,10 @@ class Results(QWidget):
         self.label_res = QLabel(self)
         self.label_res.resize(500, 450)
 
-        con = sqlite3.connect('results.bd')
+        con = sqlite3.connect('rezults.bd')
         cur = con.cursor()
-        self.result = cur.execute("""SELECT * FROM results
-                                    WHERE result > 0""").fetchall()
+        self.result = cur.execute("""SELECT * FROM rezults
+                                    WHERE rezult > 0""").fetchall()
         self.out_res()
 
     def out_res(self):
