@@ -41,10 +41,10 @@ class Results(QWidget):
         self.label_res = QLabel(self)
         self.label_res.resize(500, 450)
 
-        con = sqlite3.connect('rezults.bd')
+        con = sqlite3.connect('results.bd')
         cur = con.cursor()
-        self.result = cur.execute("""SELECT * FROM rezults
-                                    WHERE rezult > 0""").fetchall()
+        self.result = cur.execute("""SELECT * FROM results
+                                    WHERE result > 0""").fetchall()
         self.out_res()
 
     def out_res(self):
