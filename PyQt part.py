@@ -25,6 +25,9 @@ class GameStartWidget(QMainWindow):
         self.button_exit.setText('Выйти')
         self.button_exit.clicked.connect(self.close_window)
         self.button_exit.setFont(self.font)
+        self.button_exit.setIcon(QIcon('data/Exit_Button.png'))
+        self.button_exit.setIconSize(QSize(171, 51))
+        self.button_exit.setText('')
 
         self.button_rez.clicked.connect(self.open_result)
 
@@ -36,6 +39,8 @@ class GameStartWidget(QMainWindow):
         self.button_rez.setIconSize(QSize(431, 161))
         self.button_rez.setText('')
 
+        self.pic_background = QPixmap('data/Mario_Background.jpg')
+        self.label_main.setPixmap(self.pic_background)
 
     def close_window(self):
         self.close()
