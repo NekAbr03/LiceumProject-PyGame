@@ -18,7 +18,7 @@ class GameStartWidget(QMainWindow):
                            'QWidget {font-family: "comfortaa";}'
                            'QPushButton { font-family: "comfortaa";}'
                            )
-        self.font.setPointSize(13)
+        self.font.setPointSize(15)
         self.font.setBold(True)
         self.button_exit.setText('Выйти')
         self.button_exit.clicked.connect(self.close_window)
@@ -26,6 +26,9 @@ class GameStartWidget(QMainWindow):
         self.button_exit.setIcon(QIcon('data/Exit_Button.png'))
         self.button_exit.setIconSize(QSize(171, 51))
         self.button_exit.setText('')
+
+        self.button_music.setFont(self.font)
+        self.button_music.clicked.connect(self.music)
 
         self.button_rez.clicked.connect(self.open_result)
 
@@ -50,6 +53,8 @@ class GameStartWidget(QMainWindow):
     def update_res(self):  # обновление результата в label_rez
         pass
 
+    def music(self):
+        pass
 
 class Results(QWidget):
     def __init__(self):

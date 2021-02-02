@@ -82,11 +82,25 @@
      <string>Последний рекорд - 0</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="button_music">
+    <property name="geometry">
+     <rect>
+      <x>780</x>
+      <y>10</y>
+      <width>201</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Звуки</string>
+    </property>
+   </widget>
    <zorder>label_main</zorder>
    <zorder>button_play</zorder>
    <zorder>button_rez</zorder>
    <zorder>button_exit</zorder>
    <zorder>label_rez</zorder>
+   <zorder>button_music</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
