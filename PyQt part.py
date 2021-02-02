@@ -1,6 +1,9 @@
 import sys
 import sqlite3
-
+import os
+import sys
+import random
+import pygame
 from PyQt5.QtCore import QSize
 from PyQt5.QtGui import QFont, QPixmap, QIcon
 from PyQt5 import uic
@@ -35,6 +38,7 @@ class GameStartWidget(QMainWindow):
         self.button_play.setIcon(QIcon('data/Play_Button.png'))
         self.button_play.setText('')
         self.button_play.setIconSize(QSize(431, 161))
+        self.button_play.clicked.connect(self.play)
 
         self.button_rez.setIcon(QIcon('data/Results_Button.png'))
         self.button_rez.setIconSize(QSize(431, 161))
@@ -45,6 +49,9 @@ class GameStartWidget(QMainWindow):
 
     def close_window(self):
         self.close()
+
+    def play(self):
+        PLay()
 
     def open_result(self):  # окно с таблицей результатов
         self.window_res = Results()
@@ -83,6 +90,34 @@ class Results(QWidget):
         for i in self.result:
             res_table.append(str(*i))
         self.label_res.setText('\n'.join(res_table))
+
+
+
+class PLay(GameStartWidget):
+    pygame.init()
+    size = width, height = 750, 500
+    screen = pygame.display.set_mode(size)
+    clock = pygame.time.Clock()
+
+    if __name__ == '__main__':
+
+        # создадим группу, содержащую все спрайты
+        all_sprites = pygame.sprite.Group()
+        running = True
+        while running:
+            # внутри игрового цикла ещё один цикл
+            # приема и обработки сообщений
+            for event in pygame.event.get():
+                # при закрытии окна
+                if event.type == pygame.QUIT:
+                    running = False
+            screen.fill(pygame.Color("black"))
+            all_sprites.draw(screen)
+            all_sprites.update()
+            clock.tick(50)
+            # обновление экрана
+            pygame.display.flip()
+        pygame.quit()
 
 
 def except_hook(cls, exception, traceback):
